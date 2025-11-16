@@ -11,7 +11,7 @@
         /* 使用 Noto Sans TC 作為中文首選字體，Inter 作為英文和數字字體 */
         body {
             font-family: 'Inter', 'Noto Sans TC', sans-serif;
-            background-color: #f4f7f9; /* 淺灰色背景 */
+            background-color: #f8f9fa; /* 淺灰色背景 */
         }
         .section-title {
             position: relative;
@@ -25,9 +25,9 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 50px; /* 標題下方短線 */
+            width: 60px; /* 標題下方短線加長 */
             height: 4px;
-            background-color: #3b82f6; /* 藍色裝飾 */
+            background-color: #1d4ed8; /* 稍深的藍色裝飾 */
             border-radius: 2px;
         }
     </style>
@@ -35,39 +35,52 @@
 <body>
 
     <!-- 主要履歷容器 -->
-    <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 bg-white shadow-xl rounded-2xl my-8">
+    <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 bg-white shadow-2xl rounded-2xl my-8 border-t-8 border-blue-600">
 
         <!-- 頂部個人資訊 -->
-        <header class="pb-6 border-b-4 border-blue-500 mb-6">
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-2">
-                張伯宇
-            </h1>
-            <!-- <p class="text-xl text-blue-600 font-semibold mb-3">
-                軟體工程師 / AI 研究員
-            </p> -->
-            <div class="flex flex-wrap gap-x-6 text-gray-600 text-sm">
-                <!-- 請替換為您的聯繫資訊 -->
-                <span class="flex items-center space-x-1">
+        <header class="pb-6 border-b-2 border-gray-200 mb-6">
+            <!-- 資訊與大頭照並排 -->
+            <div class="flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center">
+                <div class="mt-4 sm:mt-0">
+                    <h1 class="text-4xl font-extrabold text-gray-900 mb-2">
+                        張伯宇
+                    </h1>
+                    <!-- <p class="text-xl text-blue-600 font-semibold mb-3">
+                        軟體工程師 / AI 應用開發
+                    </p> -->
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="src/myphoto.jpg" 
+                            alt="個人大頭照" 
+                            class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white ring-4 ring-blue-500 mx-auto sm:mx-0"
+                            onerror="this.onerror=null; this.src='https://placehold.co/150x150/aaaaaa/ffffff?text=Placeholder'">
+                </div>
+            </div>
+            <!-- 聯絡資訊區塊 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-2 mt-4 text-gray-600 text-sm">
+                <!-- Email -->
+                <span class="flex items-center space-x-2">
                     <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     <span>zxc40612zxc@gmail.com</span>
                 </span>
-                <span class="flex items-center space-x-1 mt-1 sm:mt-0">
+                <!-- Phone -->
+                <span class="flex items-center space-x-2">
                     <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     <span>0963-439-313</span>
                 </span>
-                <a href="https://github.com/YourUsername" target="_blank" class="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition duration-150 mt-1 sm:mt-0">
+                <!-- GitHub -->
+                <a href="https://github.com/Future-Tens" target="_blank" class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition duration-150">
                     <svg class="w-4 h-4 text-gray-500" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.805 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.69.084-.69 1.205.086 1.838 1.232 1.838 1.232 1.07 1.838 2.809 1.306 3.492.997.107-.775.418-1.306.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.305-.535-1.524.118-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.293-1.552 3.301-1.23 3.301-1.23.653 1.652.242 2.871.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.474 5.923.432.37.823 1.102.823 2.222v3.293c0 .319.192.694.8 0 4.767-1.585 8.205-6.084 8.205-11.385C24 5.373 18.627 0 12 0z"/></svg>
                     <span>GitHub: Future-Tens</span>
                 </a>
             </div>
-        </section>
         </header>
 
         <!-- 關於我 (About Me) -->
         <section class="mb-8">
             <h2 class="section-title text-2xl">關於我</h2>
-            <p class="text-gray-700 leading-relaxed">
-                我畢業於國立東華大學資訊工程研究所碩士，主要研究內容為深度學習相關應用。除了 AI/ML 背景，我也具備全端開發經驗，曾負責企業網站的建置與部署 (XAMPP/WordPress)，透過課餘時間體驗驗不同領域的內容。我正積極尋求軟體工程師或 AI 工程師相關職位。
+            <p class="text-gray-700 leading-relaxed text-base">
+                我畢業於國立東華大學資訊工程研究所碩士，主要研究內容為深度學習相關應用。除了 AI/ML 背景，我也具備全端開發經驗，曾負責企業網站的建置與部署 (XAMPP/WordPress)，透過課餘時間體驗不同領域的內容。我正積極尋求軟體工程師或 AI 工程師相關職位。
             </p>
         </section>
          <!-- 學歷 (Education) -->
@@ -75,38 +88,34 @@
             <h2 class="section-title text-2xl">學歷</h2>
                 <div class="space-y-4">
                     <!-- 最高學歷：國立東華大學資訊工程研究所 碩士 -->
-                    <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-md">
-                        <div class="flex justify-between items-start flex-col sm:flex-row">
-                            <h3 class="text-lg font-semibold text-gray-800">
+                    <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-300">
+                        <!-- 標題與日期對齊 -->
+                        <div class="flex justify-between items-start mb-2 flex-col sm:flex-row">
+                            <h3 class="text-lg font-bold text-gray-800">
                                 國立東華大學 - 資訊工程研究所 (碩士)
                             </h3>
-                            <span class="text-sm text-gray-500 mt-1 sm:mt-0">
+                            <span class="text-sm text-gray-500 sm:ml-4 flex-shrink-0 mt-1 sm:mt-0">
                                 112年9月 ~ 114年6月 (2023.09 ~ 2025.06)
                             </span>
                     </div>
-                        <p class="text-gray-600 mt-1">
-                            研究領域：WGAN-GP、行動網路優化、聯邦學習(Federated Learning)、LSTM
-                        </p>
-                        <p class="text-gray-600 mt-1">
-                            Thesis title: Conditional LSTM-WGAN-GP with Time Encoding for Multivariate Solar Power Data Augmentation
+                        <p class="text-gray-600 mt-1 text-sm">
+                            研究領域：WGAN-GP、行動網路優化、聯邦學習(Federated Learning)
                         </p>
                     </div>
 
                 <!-- 第二學歷：國立東華大學資訊工程系 學士 -->
-                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-md">
-                    <div class="flex justify-between items-start flex-col sm:flex-row">
-                        <h3 class="text-lg font-semibold text-gray-800">
+                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-300">
+                    <!-- 標題與日期對齊 -->
+                    <div class="flex justify-between items-start mb-2 flex-col sm:flex-row">
+                        <h3 class="text-lg font-bold text-gray-800">
                             國立東華大學 - 資訊工程學系 (學士)
                         </h3>
-                        <span class="text-sm text-gray-500 mt-1 sm:mt-0">
+                        <span class="text-sm text-gray-500 sm:ml-4 flex-shrink-0 mt-1 sm:mt-0">
                             108年9月 ~ 112年6月 (2019.09 ~ 2023.06)
                         </span>
                     </div>
-                    <p class="text-gray-600 mt-1">
-                        主修：資訊工程。
-                    </p>
-                    <p class="text-gray-600 mt-1">
-                        畢業專題名稱：手語辨識。 
+                    <p class="text-gray-600 mt-1 text-sm">
+                        專業選修：資訊工程。
                     </p>
                 </div>
             </div>
@@ -116,43 +125,127 @@
         <section class="mb-8">
             <h2 class="section-title text-2xl">經歷與專案</h2>
             <div class="space-y-4">
-                <!-- 網站架設案例：海螺網頁設計 -->
-                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-md">
-                    <div class="flex justify-between items-start flex-col sm:flex-row">
-                        <h3 class="text-lg font-semibold text-gray-800">
-                            網站接案專案：海蝸牛民宿 企業網站建置
+                
+                <!-- AI新秀計畫 -->
+                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-300">
+                    <!-- 標題與日期對齊 -->
+                    <div class="flex justify-between items-start mb-2 flex-col sm:flex-row">
+                        <h3 class="text-lg font-bold text-gray-800">
+                            AI新秀計畫
                         </h3>
-                        <a href="https://www.seasnail.com.tw/seasnail/" target="_blank" class="text-blue-600 hover:underline text-sm font-medium mt-1 sm:mt-0">
-                            <span class="inline-block">專案連結 (seasnail.com.tw)</span>
-                            <!-- 外部連結圖示 -->
-                            <svg class="w-3 h-3 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <span class="text-sm text-gray-500 sm:ml-4 flex-shrink-0 mt-1 sm:mt-0">
+                            114年10月~
+                        </span>
+                    </div>
+                    
+                    <p class="text-gray-600 mt-1 text-sm">
+                        技術棧：<span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">Azure</span> + <span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">HTML</span> + <span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">JavaScript</span> + <span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">生成式AI</span>
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 ml-4 text-sm">
+                        <li>學習資料視覺化、機器學習、深度學習與生成式 AI 等基礎與進階主題。</li>
+                        <li>透過 Azure 雲端應用技術實作，建立完整的資訊系統與 AI 應用思維。</li>
+                        <li>掌握前端基礎 (HTML/JS)，具備專案原型開發能力。</li>
+                        <li>透過實習媒合機制，有效銜接產業需求。</li>
+                    </ul>
+                    <!-- 連結 -->
+                    <div class="mt-3 text-right">
+                        <a href="https://www.italent.org.tw/AIStar/" target="_blank" class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center">
+                            <span>計畫連結</span>
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
-                    <p class="text-gray-600 mt-1">
+                </div>
+
+
+                <!-- 碩士論文內容 -->
+                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-300">
+                    <!-- 標題與日期對齊 -->
+                    <div class="flex justify-between items-start mb-2 flex-col sm:flex-row">
+                        <h3 class="text-lg font-bold text-gray-800">
+                            碩士論文: 時間編碼結合條件式 LSTM-WGAN-GP 於多變量太陽能發電資料增強
+                        </h3>
+                        <span class="text-sm text-gray-500 sm:ml-4 flex-shrink-0 mt-1 sm:mt-0">
+                            113年9月 ~ 114年6月
+                        </span>
+                    </div>
+                    
+                    <p class="text-gray-600 mt-1 text-sm">
+                        技術棧：<span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">Python</span> + <span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">PyTorch</span> + <span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">WGAN-GP</span>
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 ml-4 text-sm">
+                        <li>針對含天氣資訊的太陽能發電時序性資料進行對抗式學習。</li>
+                        <li>透過時間編碼等資料工程，以時間資訊作為條件進行學習。</li>
+                        <li>對於稀缺資料進行資料生成達到資料增強的效果</li>
+                    </ul>
+                    
+                    <!-- 論文連結 -->
+                    <div class="mt-3 text-right">
+                        <a href="https://hdl.handle.net/11296/wx33a9" target="_blank" class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center">
+                            <span>碩士論文連結 (碩博士論文知識加值系統)</span>
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 網站架設案例：海蝸牛網頁設計 -->
+                 <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-300">
+                    <!-- 標題與日期對齊 -->
+                    <div class="flex justify-between items-start mb-2 flex-col sm:flex-row">
+                        <h3 class="text-lg font-bold text-gray-800">
+                            網站接案專案：海蝸牛民宿 品牌網站建置
+                        </h3>
+                        <span class="text-sm text-gray-500 sm:ml-4 flex-shrink-0 mt-1 sm:mt-0">
+                            113年7月 ~ 113年7月
+                        </span>
+                    </div>
+                    
+                    <p class="text-gray-600 mt-1 text-sm">
                         技術棧：<span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">XAMPP</span> + <span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">WordPress</span>
                     </p>
                     <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 ml-4 text-sm">
                         <li>負責使用 XAMPP 環境進行本地開發與測試，並於部屬在本地端。</li>
                         <li>利用 WordPress 進行佈景主題選擇、客製化調整與功能插件整合。</li>
                         <li>完成網站架構設計與內容建置，確保網站的穩定性與使用者體驗。</li>
-
                     </ul>
+
+                    <!-- 專案連結 -->
+                    <div class="mt-3 text-right">
+                        <a href="https://www.seasnail.com.tw/seasnail/" target="_blank" class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center">
+                            <span>專案連結 (seasnail.com.tw)</span>
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- 額外的專業經歷 (可修改或刪除) -->
-                <!-- <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-md">
-                    <div class="flex justify-between items-start flex-col sm:flex-row">
-                        <h3 class="text-lg font-semibold text-gray-800">
-                            [公司名稱/職位名稱]
+                <!-- 額外的專業經歷 -->
+                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-300">
+                    <!-- 標題與日期對齊 -->
+                    <div class="flex justify-between items-start mb-2 flex-col sm:flex-row">
+                        <h3 class="text-lg font-bold text-gray-800">
+                            手語辨識器
                         </h3>
-                        <span class="text-sm text-gray-500 mt-1 sm:mt-0">
-                            [年/月] ~ [年/月]
+                        <span class="text-sm text-gray-500 sm:ml-4 flex-shrink-0 mt-1 sm:mt-0">
+                            110年9月 ~ 111年5月
                         </span>
                     </div>
-                    <p class="text-gray-600 mt-1">
-                        [請填寫主要職責或實習內容]
+                    
+                    <p class="text-gray-600 mt-1 text-sm">
+                        技術棧：<span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">Python</span> + <span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">Mediapipe</span> + <span class="font-mono bg-gray-100 px-1 py-0.5 rounded text-xs">TensorFlow</span>
                     </p>
-                </div> -->
+                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 ml-4 text-sm">
+                        <li>透過Mediapipe對手語影像擷取人體支點進行前處理。</li>
+                        <li>結合3DCNN+LSTM的模型架構進行手語辨識深度學習。</li>
+                    </ul>
+
+                    <!-- 專案連結 -->
+                    <div class="mt-3 text-right">
+                        <a href="https://drive.google.com/file/d/1zmv2X090fft9SKPq1My5Fz_h6OgA6klk/view?usp=sharing" target="_blank" class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center">
+                            <span>專案連結 (Google Drive)</span>
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                    
+                </div> 
             </div>
         </section>
 
@@ -161,16 +254,18 @@
             <h2 class="section-title text-2xl">研究成果與獲獎</h2>
             <div class="space-y-4">
                 <!-- MDPI Sensors Paper -->
-                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-md bg-green-50">
-                    <div class="flex justify-between items-start flex-col sm:flex-row">
-                        <h3 class="text-lg font-semibold text-green-800">
+                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-300 bg-green-50">
+                    <!-- 標題與日期對齊 -->
+                    <div class="flex justify-between items-start mb-2 flex-col sm:flex-row">
+                        <h3 class="text-lg font-bold text-green-800">
                             國際期刊論文發表 (MDPI Sensors)
                         </h3>
-                        <span class="text-sm text-gray-500 mt-1 sm:mt-0">
+                        <span class="text-sm text-gray-500 sm:ml-4 flex-shrink-0 mt-1 sm:mt-0">
                             2024年10月
                         </span>
                     </div>
-                    <p class="text-gray-700 mt-1 font-medium">
+                    
+                    <p class="text-gray-700 mt-1 font-medium text-sm">
                         論文標題：Privacy-Preserving Handover Optimization Using Federated Learning and LSTM Networks
                     </p>
                     <a href="https://www.mdpi.com/1424-8220/24/20/6685" target="_blank" class="text-green-600 hover:underline text-sm font-medium block mt-2">
@@ -180,39 +275,57 @@
                     </a>
                 </div>
 
-                <!-- Best Paper Award -->
-                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-md bg-yellow-50">
-                    <div class="flex justify-between items-start flex-col sm:flex-row">
-                        <h3 class="text-lg font-semibold text-yellow-800">
+                <!-- Best Paper Award - 調整排版，讓圖片在右側清晰展示 -->
+                <div class="p-4 border border-gray-200 rounded-lg transition duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-300 bg-yellow-50">
+                    <!-- 標題與日期對齊 -->
+                    <div class="flex justify-between items-start mb-2 flex-col sm:flex-row">
+                        <h3 class="text-lg font-bold text-yellow-800">
                             **最佳論文獎** (Best Paper Award)
                         </h3>
-                        <span class="text-sm text-gray-500 mt-1 sm:mt-0">
+                        <span class="text-sm text-gray-500 sm:ml-4 flex-shrink-0 mt-1 sm:mt-0">
                             2025年5月
                         </span>
                     </div>
-                    <p class="text-gray-700 mt-1">
-                        研討會：第二十三屆離島資訊技術與應用研討會 (ITAOI 2025)
-                    </p>
-                    <p class="text-gray-700 mt-1 font-medium">
-                        獲獎論文標題：融合天氣資訊的WGAN-GP資料增強強於太陽能發電預測應用
-                    </p>
-                    <p class="text-sm text-gray-600 mt-2">
-                        此為國內研討會獲獎證明，證明在學術研究領域的突出貢獻。
-                    </p>
+
+                    <!-- 內容與圖片的 Flex 容器 -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mt-1">
+                        <!-- 文字內容 -->
+                        <div class="flex-grow">
+                            <p class="text-gray-700 font-medium text-sm">
+                                研討會：第二十三屆離島資訊技術與應用研討會 (ITAOI 2025)
+                            </p>
+                            <p class="text-gray-700 font-medium text-sm mt-1">
+                                論文標題：融合天氣資訊的WGAN-GP資料增強於太陽能發電預測應用
+                            </p>
+                            <p class="text-sm text-gray-600 mt-2">
+                                此為國內研討會獲獎證明。
+                            </p>
+                        </div>
+                        
+                        <!-- 獲獎圖片連結 (點擊在新分頁開啟) -->
+                        <a href="src/ITAOI.png" target="_blank" title="點擊在新分頁開啟獎狀大圖" class="flex-shrink-0 mt-2 md:mt-0">
+                            <img src="src/ITAOI.png" 
+                                 alt="最佳論文獎獎狀" 
+                                 class="w-20 h-20 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300 border-2 border-yellow-400">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 技能 (Skills) -->
+        <!-- 技能 (Skills) - 建議新增的部分 -->
         <section class="mb-8">
             <h2 class="section-title text-2xl">技能</h2>
             <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">Python (PyTorch / TensorFlow)</span>
-                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">C / CPP</span>
+                <!-- 核心技能：深藍色強調 -->
+                <span class="px-3 py-1 bg-blue-600 text-white text-sm font-medium rounded-full">Python (PyTorch / TensorFlow)</span>
+                <span class="px-3 py-1 bg-blue-600 text-white text-sm font-medium rounded-full">Microsoft Azure</span>
+                <span class="px-3 py-1 bg-blue-600 text-white text-sm font-medium rounded-full">C / CPP</span>
+                <!-- 其他技能：淺藍色 -->
                 <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">Web Development (HTML/CSS/JS)</span>
                 <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">WordPress / XAMPP</span>
                 <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">Git / GitHub</span>
-                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">資料庫 (SQL/MongoDB)</span>
+                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">資料庫 (MySQL/MongoDB)</span>
             </div>
         </section>
 
@@ -224,6 +337,4 @@
     </div>
 
 </body>
-
 </html>
-
